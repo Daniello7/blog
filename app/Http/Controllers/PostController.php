@@ -20,4 +20,14 @@ class PostController extends Controller
         // $post = Post::find($id)
         // return 'Detalle del post ' . $post->title;
     }
+
+    public function create()
+    {
+        return view('posts.create');
+    }
+
+    public function store()
+    {
+        return 'Post was created';
+    }
 }
