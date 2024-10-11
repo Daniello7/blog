@@ -16,10 +16,7 @@ class PostController extends Controller
 
     public function show(Post $post)
     {
-        return view('posts.show', compact('post')); // Es lo mismo que ['post' => $post]
-        // Si recibe $id de parámetro
-        // $post = Post::find($id)
-        // return 'Detalle del post ' . $post->title;
+        return view('posts.show', compact('post'));
     }
 
     public function create()
@@ -29,6 +26,11 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required',
+            'body' => 'required',
+        ]);
+
         $post = new Post();
         $post->title = $request->input('title');
         $post->body = $request->input('body');
