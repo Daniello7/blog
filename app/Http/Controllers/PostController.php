@@ -45,4 +45,9 @@ class PostController extends Controller
     {
         return view('posts.edit', compact('post'));
     }
+
+    public function update()
+    {
+        return 'Estoy en el método update';
+    }
 }

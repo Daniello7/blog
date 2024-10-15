@@ -1,7 +1,8 @@
 <x-layout :meta-title="$post->title" :meta-description="$post->body">
     <h1>{{ __('Edit Post') }}</h1>
     <form method="POST" action="{{ route('posts.update', $post) }}">
-        @csrf
+        @csrf <!--token-->
+        @method('PATCH')
         <label>
             {{ __('Title') }} <br>
             <input type="text" name="title" value="{{ old('title', $post->title) }}">
