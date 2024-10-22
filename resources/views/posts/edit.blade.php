@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form method="POST" action="{{ route('posts.update', $post) }}">
                         @include('posts.form-fields')
-                        <x-primary-button type="submit">{{ __('Send') }}</x-primary-button>
+                        <x-primary-button type="submit">{{ __('Save') }}</x-primary-button>
                         @csrf <!--token-->
                         @method('PATCH')
                     </form>

@@ -10,7 +10,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <form method="POST" action="{{ route('posts.store') }}">
                         @include('posts.form-fields')
-                        <x-primary-button type="submit" class="mt-4">{{ __('Send') }}</x-primary-button>
+                        <x-primary-button type="submit" class="mt-4">{{ __('Save') }}</x-primary-button>
                         @csrf
                     </form>
                 </div>
