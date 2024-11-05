@@ -55,16 +55,12 @@
         @endauth
 
         <div class="flex-1 space-y-3 pt-4 md:text-center">
-            <h2
-                class="text-2xl font-semibold leading-tight text-slate-800 dark:text-slate-200 md:text-4xl"
-            >
+            <h2 class="text-2xl font-semibold leading-tight text-slate-800 dark:text-slate-200 md:text-4xl">
                 {{ $post->title }}
             </h2>
         </div>
 
-        <div
-            class="prose prose-slate mx-auto mt-6 dark:prose-invert lg:prose-xl"
-        >
+        <div class="prose prose-slate mx-auto mt-6 dark:prose-invert lg:prose-xl dark:text-slate-400">
             <p>
                 {{ $post->body }}
             </p>
