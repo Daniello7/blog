@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->timestamp('published_at')->after('body')->nullable();
+            $table->foreignId('user_id')->after('published_at')->constrained();
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration {
     public function down(): void
     {
         Schema::table('posts', function (Blueprint $table) {
-            $table->dropColumn('published_at');
+            $table->dropColumn('user_id');
         });
     }
 };

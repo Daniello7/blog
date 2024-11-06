@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -18,7 +17,7 @@ class PostController extends Controller
     public function index()
     {
 //        $posts = Post::all();
-        $posts = Post::where('published_at', '<=', Carbon::now())->get();
+        $posts = Post::where('published_at', '<=', now())->get();
 
         return view('posts.index', compact('posts'));
     }
@@ -35,7 +34,10 @@ class PostController extends Controller
 
     public function store(StorePostRequest $request)
     {
-        Post::create($request->validated());
+        $data = $request->validated();
+        $data['user_id'] = auth()->id();
+
+        Post::create($data);
 
         return to_route('posts.index')
             ->with('status', 'Post created successfully');
