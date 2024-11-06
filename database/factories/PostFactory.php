@@ -19,7 +19,7 @@ class PostFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'body' => $this->faker->paragraph(),
-            'published_at' => $this->faker->dateTime()
+            'published_at' => $this->faker->dateTimeBetween('-1 month', '+1 month'),
         ];
     }
 }
