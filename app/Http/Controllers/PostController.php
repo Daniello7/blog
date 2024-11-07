@@ -62,4 +62,11 @@ class PostController extends Controller
         return to_route('posts.index')
             ->with('status', 'Post deleted successfully');
     }
+
+    public function userPosts()
+    {
+        $posts = auth()->user()->posts()->get();
+
+        return view('posts.index', compact('posts'));
+    }
 }
