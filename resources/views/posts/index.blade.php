@@ -49,6 +49,9 @@
 
                 </article>
             @endforeach
+            <div>
+                {{ $posts->links() }}
+            </div>
         </div>
     </div>
 </x-blog-layout>
