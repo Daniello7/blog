@@ -1,7 +1,7 @@
 <x-blog-layout :meta-title="$post->title" :meta-description="$post->body">
     <article class="mx-auto flex max-w-4xl flex-col">
         @auth()
-            @if($post->user == auth()->user())
+            @if($post->user_id == auth()->user()->id)
                 <div
                     class="flex items-center justify-center space-x-10"
                 >
